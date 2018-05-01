@@ -17,12 +17,11 @@ hbs.registerHelper('shoutOut', (text) => {
 
 server.set('view engine', 'hbs');
 
-server.use((req,res,next) => {
-  res.render('maintenance.hbs');
-});
+// server.use((req,res,next) => {
+//   res.render('maintenance.hbs');
+// });
 
 server.use(express.static(__dirname + '/public'));
-
 server.get("/", (req,res) => {
   res.render('home.hbs');
 });
