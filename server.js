@@ -18,16 +18,16 @@ hbs.registerHelper('shoutOut', (text) => {
 
 server.set('view engine', 'hbs');
 
-// server.use((req,res,next) => {
-//   res.render('maintenance.hbs');
-// });
-
 server.use(express.static(__dirname + '/public'));
 server.get("/", (req,res) => {
   res.render('home.hbs');
 });
 
+server.get("/projects", (req,res) => {
+  res.render('projects.hbs');
+});
+
 server.get("/about", (req,res) => {
-  res.render('About.hbs');
+  res.render('about.hbs');
 });
 server.listen(port,() => console.log(`Server started on port ${port}`));
